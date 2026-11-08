@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHEMP | Halal RWA Agri-Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #050505; --surface: rgba(25, 25, 30, 0.7); --primary: #00ff88; --secondary: #d4af37; --text: #e0e0e0; --text-muted: #a0a0a0; --border: rgba(255, 255, 255, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; background-image: radial-gradient(circle at 15% 50%, rgba(0, 255, 136, 0.08) 0%, transparent 50%), radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%); }
+        nav { position: fixed; top: 0; width: 100%; padding: 20px 50px; background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: 2px; } .logo span { color: var(--primary); }
+        .nav-links a { color: var(--text); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-weight: 600; transition: color 0.3s; } .nav-links a:hover { color: var(--primary); }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 100px 20px; }
+        .hero h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; background: linear-gradient(90deg, #fff, var(--text-muted)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero h1 span { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin-bottom: 40px; }
+        .btn { display: inline-block; padding: 15px 40px; background: linear-gradient(90deg, var(--primary), #00cc6a); color: #000; font-weight: 800; text-decoration: none; border-radius: 50px; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 255, 136, 0.5); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+        .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 40px; text-align: center; color: #fff; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--secondary); margin: 15px auto 0; border-radius: 2px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .card { background: var(--surface); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 20px; padding: 40px; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: rgba(0, 255, 136, 0.3); }
+        .card h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 15px; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-top: 40px; justify-content: center; }
+        .video-wrapper { background: #000; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.5); position: relative; width: 100%; max-width: 600px; margin: 0 auto; }
+        video { width: 100%; display: block; }
+        .history-timeline { display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto; }
+        .timeline-item { border-left: 4px solid var(--primary); padding-left: 20px; background: linear-gradient(90deg, rgba(0, 255, 136, 0.05), transparent); padding: 20px; border-radius: 0 10px 10px 0; }
+        .timeline-item h4 { color: var(--secondary); margin-bottom: 10px; font-size: 1.2rem; }
+        footer { text-align: center; padding: 40px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.5rem; } nav { padding: 20px; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">GHEMP<span>.</span></div>
+        <div class="nav-links">
+            <a href="#vision">Vision</a>
+            <a href="#history">History</a>
+            <a href="#videos">Videos</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>The Future of <span>Halal</span> Agriculture<br>on the Blockchain</h1>
+        <p>GHEMP is an innovative RWA (Real World Assets) platform on Solana. We tokenize agricultural assets and rights to future harvests, bypassing usurious banks to build a transparent, Sharia-compliant economy.</p>
+        <a href="#videos" class="btn">Watch the Pitch</a>
+    </section>
+
+    <div class="container" id="vision">
+        <h2 class="section-title">Our Vision</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>100% Halal Capital</h3>
+                <p>We reject the traditional banking system built on Riba (usury). Our smart contracts facilitate ethical, profit-sharing investments that benefit both the farmer and the investor, in full compliance with Islamic finance principles.</p>
+            </div>
+            <div class="card">
+                <h3>Empowering Farmers</h3>
+                <p>We provide farmers in the Republic of Tatarstan and beyond with direct access to global liquidity. By tokenizing their harvests, they can secure funding without the burden of high-interest loans.</p>
+            </div>
+            <div class="card">
+                <h3>Solana Blockchain</h3>
+                <p>Built on Solana for its ultra-fast transaction speeds and microscopic fees. This ensures that every dollar goes into the real economy, not into network congestion.</p>
+            </div>
+            <div class="card">
+                <h3>Real World Assets (RWA)</h3>
+                <p>We are not just creating a token; we are digitizing real value. Industrial hemp, grain, and agricultural products are brought on-chain, bridging the gap between Web3 and the real economy.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="history" style="background: rgba(255,255,255,0.02); border-radius: 30px;">
+        <h2 class="section-title">The GHEMP Story</h2>
+        <div class="history-timeline">
+            <div class="timeline-item">
+                <h4>Phase 1: The Genesis</h4>
+                <p>Born from the idea to revive the industrial hemp sector that once powered Russia's economy for centuries. We united farmers and processing plants under a single vision.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Phase 2: Overcoming Barriers</h4>
+                <p>We faced the bureaucratic wall of traditional funding. Rejected by local banks and state funds, we realized the system was broken and built for the few. We decided to build our own path.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Phase 3: Web3 & Islamic Finance</h4>
+                <p>We pivoted to the blockchain. We chose Solana and embraced the principles of Islamic Finance. GHEMP is now a bridge between Russian agricultural potential and Islamic investors worldwide.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="videos">
+        <h2 class="section-title">Project Presentation</h2>
+        <div class="video-grid">
+                        <div class='video-wrapper'><video controls><source src='video1.mp4' type='video/mp4'>Your browser does not support the video tag.</video></div>
+            <div class='video-wrapper'><video controls><source src='video2.mp4' type='video/mp4'>Your browser does not support the video tag.</video></div>
+
+        </div>
+    </div>
+
+    <div class="container" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="card" style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <h3>Artur</h3>
+            <p style="margin-bottom: 20px;">CEO, GHEMP LLC</p>
+            <p><strong>Email:</strong> info@ghemp.com</p>
+            <p><strong>Phone:</strong> +7 908 888 2498</p>
+            <br>
+            <a href="mailto:info@ghemp.com" class="btn">Contact Us</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GHEMP LLC. Building the Halal Web3 Economy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
