@@ -3,118 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GHEMP | Halal RWA Agri-Tech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>GHEMP | Next-Gen RWA Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #050505; --surface: rgba(25, 25, 30, 0.7); --primary: #00ff88; --secondary: #d4af37; --text: #e0e0e0; --text-muted: #a0a0a0; --border: rgba(255, 255, 255, 0.1); }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; background-image: radial-gradient(circle at 15% 50%, rgba(0, 255, 136, 0.08) 0%, transparent 50%), radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%); }
-        nav { position: fixed; top: 0; width: 100%; padding: 20px 50px; background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: 2px; } .logo span { color: var(--primary); }
-        .nav-links a { color: var(--text); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-weight: 600; transition: color 0.3s; } .nav-links a:hover { color: var(--primary); }
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 100px 20px; }
-        .hero h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; background: linear-gradient(90deg, #fff, var(--text-muted)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero h1 span { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin-bottom: 40px; }
-        .btn { display: inline-block; padding: 15px 40px; background: linear-gradient(90deg, var(--primary), #00cc6a); color: #000; font-weight: 800; text-decoration: none; border-radius: 50px; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 255, 136, 0.5); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
-        .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 40px; text-align: center; color: #fff; }
-        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--secondary); margin: 15px auto 0; border-radius: 2px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .card { background: var(--surface); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 20px; padding: 40px; transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); border-color: rgba(0, 255, 136, 0.3); }
-        .card h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 15px; }
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-top: 40px; justify-content: center; }
-        .video-wrapper { background: #000; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.5); position: relative; width: 100%; max-width: 600px; margin: 0 auto; }
+        :root {
+            --bg-color: #05050A;
+            --surface-color: rgba(15, 15, 25, 0.6);
+            --primary: #6366f1; /* Indigo */
+            --primary-glow: rgba(99, 102, 241, 0.4);
+            --secondary: #22d3ee; /* Cyan */
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Manrope', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 90%, rgba(34, 211, 238, 0.1) 0%, transparent 40%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px;
+        }
+
+        /* Навигация */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 24px 5%;
+            background: rgba(5, 5, 10, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+        .logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; }
+        .logo span { color: var(--primary); }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--text-main); }
+
+        /* Hero Section (Golden Ratio 61.8% / 38.2%) */
+        .hero {
+            min-height: 100vh; display: grid; grid-template-columns: 1.618fr 1fr; align-items: center;
+            padding: 0 5%; gap: 40px; max-width: 1400px; margin: 0 auto; position: relative;
+        }
+        .hero-content { padding-top: 80px; }
+        .badge { display: inline-block; padding: 6px 16px; border-radius: 30px; background: rgba(99, 102, 241, 0.1); border: 1px solid var(--primary); color: var(--primary); font-size: 0.8rem; font-weight: 700; margin-bottom: 24px; letter-spacing: 1px; text-transform: uppercase; }
+        .hero h1 { font-family: var(--font-heading); font-size: 4.5rem; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+        .hero h1 span { background: linear-gradient(135deg, var(--secondary), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
+        
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; background: var(--primary); color: #fff; font-weight: 700; text-decoration: none; border-radius: 8px; transition: all 0.3s; box-shadow: 0 4px 20px var(--primary-glow); border: none; font-size: 1rem; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--primary-glow); background: #4f46e5; }
+        .btn-outline { background: transparent; border: 1px solid var(--border-color); box-shadow: none; margin-left: 15px; }
+        .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: var(--text-muted); }
+
+        .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+        .visual-circle { width: 100%; max-width: 400px; aspect-ratio: 1; border-radius: 50%; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(34, 211, 238, 0.05)); border: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; box-shadow: inset 0 0 60px rgba(99, 102, 241, 0.1), 0 0 100px rgba(99, 102, 241, 0.1); animation: pulse 4s infinite alternate; }
+        
+        @keyframes pulse { 0% { transform: scale(1); } 100% { transform: scale(1.05); } }
+
+        /* Общие стили секций */
+        .section { padding: 120px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-header { margin-bottom: 60px; max-width: 700px; }
+        .section-title { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 20px; }
+        .section-desc { color: var(--text-muted); font-size: 1.1rem; }
+
+        /* Архитектура (Grid) */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: var(--surface-color); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--border-color); border-radius: 16px; padding: 40px; transition: transform 0.3s, border-color 0.3s; position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--primary), transparent); opacity: 0; transition: opacity 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: rgba(99, 102, 241, 0.3); }
+        .card:hover::before { opacity: 1; }
+        .card h3 { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 16px; color: var(--text-main); }
+        .card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Токеномика и Донат */
+        .tokenomics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .token-list { list-style: none; }
+        .token-list li { display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border-color); font-weight: 600; }
+        .token-list li span:last-child { color: var(--primary); }
+
+        /* Видео */
+        .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .video-wrapper { border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.4); position: relative; }
         video { width: 100%; display: block; }
-        .history-timeline { display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto; }
-        .timeline-item { border-left: 4px solid var(--primary); padding-left: 20px; background: linear-gradient(90deg, rgba(0, 255, 136, 0.05), transparent); padding: 20px; border-radius: 0 10px 10px 0; }
-        .timeline-item h4 { color: var(--secondary); margin-bottom: 10px; font-size: 1.2rem; }
-        footer { text-align: center; padding: 40px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.5rem; } nav { padding: 20px; } .nav-links { display: none; } }
+
+        /* Футер */
+        footer { padding: 60px 5%; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+        footer .footer-logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 20px; }
+
+        @media (max-width: 968px) {
+            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
+            .hero h1 { font-size: 3rem; }
+            .hero p { margin: 0 auto 40px; }
+            .hero-visual { display: none; }
+            .tokenomics-grid, .video-grid { grid-template-columns: 1fr; }
+            .btn-outline { margin: 15px 0 0 0; }
+        }
     </style>
 </head>
 <body>
+
     <nav>
         <div class="logo">GHEMP<span>.</span></div>
         <div class="nav-links">
-            <a href="#vision">Vision</a>
-            <a href="#history">History</a>
-            <a href="#videos">Videos</a>
-            <a href="#contact">Contact</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#tokenomics">Tokenomics</a>
+            <a href="#videos">Pitch</a>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>The Future of <span>Halal</span> Agriculture<br>on the Blockchain</h1>
-        <p>GHEMP is an innovative RWA (Real World Assets) platform on Solana. We tokenize agricultural assets and rights to future harvests, bypassing usurious banks to build a transparent, Sharia-compliant economy.</p>
-        <a href="#videos" class="btn">Watch the Pitch</a>
+        <div class="hero-content">
+            <div class="badge">Real World Assets • Solana</div>
+            <h1>Tokenizing the Future of <span>Agriculture</span></h1>
+            <p>GHEMP bridges the gap between traditional agriculture and decentralized finance. We provide a transparent, high-yield infrastructure for investing in real-world farming assets.</p>
+            <div>
+                <a href="#tokenomics" class="btn">Explore Tokenomics</a>
+                <a href="#videos" class="btn btn-outline">Watch Pitch</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="visual-circle">
+                <!-- Сюда можно вставить SVG или 3D-иконку -->
+                <svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+        </div>
     </section>
 
-    <div class="container" id="vision">
-        <h2 class="section-title">Our Vision</h2>
-        <div class="grid">
+    <section class="section" id="architecture">
+        <div class="section-header">
+            <h2 class="section-title">System Architecture</h2>
+            <p class="section-desc">Built for scalability, security, and complete transparency. Powered by Solana's high-performance blockchain.</p>
+        </div>
+        <div class="grid-3">
             <div class="card">
-                <h3>100% Halal Capital</h3>
-                <p>We reject the traditional banking system built on Riba (usury). Our smart contracts facilitate ethical, profit-sharing investments that benefit both the farmer and the investor, in full compliance with Islamic finance principles.</p>
+                <h3>Smart Contract Vaults</h3>
+                <p>Automated, audited smart contracts securely hold investor funds and release them to farmers based on verified milestones and harvest data.</p>
             </div>
             <div class="card">
-                <h3>Empowering Farmers</h3>
-                <p>We provide farmers in the Republic of Tatarstan and beyond with direct access to global liquidity. By tokenizing their harvests, they can secure funding without the burden of high-interest loans.</p>
+                <h3>RWA Tokenization</h3>
+                <p>Each token is 1:1 backed by physical agricultural assets. Our oracle network verifies crop yields and market prices in real-time.</p>
             </div>
             <div class="card">
-                <h3>Solana Blockchain</h3>
-                <p>Built on Solana for its ultra-fast transaction speeds and microscopic fees. This ensures that every dollar goes into the real economy, not into network congestion.</p>
-            </div>
-            <div class="card">
-                <h3>Real World Assets (RWA)</h3>
-                <p>We are not just creating a token; we are digitizing real value. Industrial hemp, grain, and agricultural products are brought on-chain, bridging the gap between Web3 and the real economy.</p>
+                <h3>Liquidity Layer</h3>
+                <p>Investors receive yield-bearing tokens that can be traded on secondary markets or staked within the GHEMP ecosystem for additional rewards.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container" id="history" style="background: rgba(255,255,255,0.02); border-radius: 30px;">
-        <h2 class="section-title">The GHEMP Story</h2>
-        <div class="history-timeline">
-            <div class="timeline-item">
-                <h4>Phase 1: The Genesis</h4>
-                <p>Born from the idea to revive the industrial hemp sector that once powered Russia's economy for centuries. We united farmers and processing plants under a single vision.</p>
+    <section class="section" id="tokenomics">
+        <div class="section-header">
+            <h2 class="section-title">Tokenomics & Funding</h2>
+            <p class="section-desc">A sustainable economic model designed to reward early supporters and ensure long-term growth.</p>
+        </div>
+        <div class="tokenomics-grid">
+            <div class="card">
+                <h3>Donation & Investment Flow</h3>
+                <p style="margin-bottom: 20px;">Our decentralized funding system allows seamless entry for investors:</p>
+                <ul style="list-style: none; padding-left: 0; color: var(--text-muted);">
+                    <li style="margin-bottom: 10px;">1. Connect your wallet (Phantom, Solflare).</li>
+                    <li style="margin-bottom: 10px;">2. Send SOL or USDT to the GHEMP smart contract.</li>
+                    <li style="margin-bottom: 10px;">3. Receive RWA tokens instantly to your wallet.</li>
+                    <li style="margin-bottom: 10px;">4. Track farm progress via our dashboard.</li>
+                    <li>5. Claim your share of the harvest profits.</li>
+                </ul>
             </div>
-            <div class="timeline-item">
-                <h4>Phase 2: Overcoming Barriers</h4>
-                <p>We faced the bureaucratic wall of traditional funding. Rejected by local banks and state funds, we realized the system was broken and built for the few. We decided to build our own path.</p>
-            </div>
-            <div class="timeline-item">
-                <h4>Phase 3: Web3 & Islamic Finance</h4>
-                <p>We pivoted to the blockchain. We chose Solana and embraced the principles of Islamic Finance. GHEMP is now a bridge between Russian agricultural potential and Islamic investors worldwide.</p>
+            <div class="card">
+                <h3>Token Allocation</h3>
+                <ul class="token-list">
+                    <li><span>Public Sale & Liquidity</span> <span>40%</span></li>
+                    <li><span>Ecosystem & Farming Rewards</span> <span>25%</span></li>
+                    <li><span>Team & Advisors (Vested)</span> <span>15%</span></li>
+                    <li><span>Development & Marketing</span> <span>12%</span></li>
+                    <li><span>Reserve Fund</span> <span>8%</span></li>
+                </ul>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container" id="videos">
-        <h2 class="section-title">Project Presentation</h2>
+    <section class="section" id="videos">
+        <div class="section-header">
+            <h2 class="section-title">Project Pitch</h2>
+            <p class="section-desc">Detailed breakdown of our vision, technical architecture, and market opportunity.</p>
+        </div>
         <div class="video-grid">
-                        <div class='video-wrapper'><video controls><source src='video1.mp4' type='video/mp4'>Your browser does not support the video tag.</video></div>
-            <div class='video-wrapper'><video controls><source src='video2.mp4' type='video/mp4'>Your browser does not support the video tag.</video></div>
-
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="video1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="video2.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
-    </div>
-
-    <div class="container" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="card" style="text-align: center; max-width: 600px; margin: 0 auto;">
-            <h3>Artur</h3>
-            <p style="margin-bottom: 20px;">CEO, GHEMP LLC</p>
-            <p><strong>Email:</strong> info@ghemp.com</p>
-            <p><strong>Phone:</strong> +7 908 888 2498</p>
-            <br>
-            <a href="mailto:info@ghemp.com" class="btn">Contact Us</a>
-        </div>
-    </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 GHEMP LLC. Building the Halal Web3 Economy. All rights reserved.</p>
+        <div class="footer-logo">GHEMP<span>.</span></div>
+        <p>&copy; 2026 GHEMP LLC. All rights reserved. Built on Solana.</p>
+        <p style="margin-top: 10px;">Contact: <a href="mailto:info@ghemp.com" style="color: var(--primary); text-decoration: none;">info@ghemp.com</a></p>
     </footer>
+
 </body>
 </html>
